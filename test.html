@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="flexedTable.css">
+</head>
+<body>
+	<header class="header"></header>
+	<main class="flexed-table-row flexed-table-item">
+		<nav class="nav"></nav>
+		<div id="createTable" class="conent right-content flexed-table-item">
+			<!-- 列固定的table -->
+		</div>
+	</main>
+	<script type="text/javascript" src="flexedTable.js"></script>
+	<script type="text/javascript">
+		var data1 = [{
+			"name": "ww",
+			"tel": "12344",
+			"team": "团队甲",
+			"custom": 0,
+			"aAtrategy": 0,
+			"nAtrategy": 20,
+			"status": "可用",
+			"name1": "ww",
+			"tel1": "12344",
+			"team1": "团队甲",
+			"custom1": 0,
+			"aAtrategy1": 0,
+			"nAtrategy1": 20,
+			"status1": "可用"
+		},{
+			"name": "ww",
+			"tel": "12344",
+			"team": "团队甲",
+			"custom": 0,
+			"aAtrategy": 0,
+			"nAtrategy": 20,
+			"status": "可用",
+			"name1": "ww",
+			"tel1": "12344",
+			"team1": "团队甲",
+			"custom1": 0,
+			"aAtrategy1": 0,
+			"nAtrategy1": 20,
+			"status1": "可用"
+		},{
+			"name": "ww",
+			"tel": "12344",
+			"team": "团队甲",
+			"custom": 0,
+			"aAtrategy": 0,
+			"nAtrategy": 20,
+			"status": "可用",
+			"name1": "ww",
+			"tel1": "12344",
+			"team1": "团队甲",
+			"custom1": 0,
+			"aAtrategy1": 0,
+			"nAtrategy1": 20,
+			"status1": "可用"
+		},{
+			"name": "ww",
+			"tel": "12344",
+			"team": "团队甲",
+			"custom": 0,
+			"aAtrategy": 0,
+			"nAtrategy": 20,
+			"status": "可用",
+			"name1": "ww",
+			"tel1": "12344",
+			"team1": "团队甲",
+			"custom1": 0,
+			"aAtrategy1": 0,
+			"nAtrategy1": 20,
+			"status1": "可用"
+		}];
+		var opt = {
+			header: [
+				{key:"name", value: "姓名"},
+				{key:"tel", value: "电话"},
+				{key:"team", value: "团队"},
+				{key:"custom", value: "客户"},
+				{key:"aAtrategy", value: "活动策略"},
+				{key:"nAtrategy", value: "普通策略"},
+				{key:"status", value: "状态"},
+				{key:"name1", value: "姓名"},
+				{key:"tel1", value: "电话"},
+				{key:"team1", value: "团队"},
+				{key:"custom1", value: "客户"},
+				{key:"aAtrategy1", value: "活动策略"},
+				{key:"nAtrategy1", value: "普通策略"},
+				{key:"status1", value: "状态"}
+			],
+			fixedLeft: 2,
+			fixedRight: 1,
+			constainer: "#createTable",
+			data: data1
+		}
+		var t = new FlexedTable(opt);
+	</script>
+</body>
+</html>

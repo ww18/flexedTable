@@ -76,20 +76,55 @@ FlexedTable.prototype = {
 		return divContainer;
 	},
 	addEvent(){
-		tableContainer.addEventListener('mouseover', (e)=>{
+		this.divContainer.addEventListener('mouseover', (e)=>{
 			this.fixedTableHover(e);
 		},false);
-		tableContainer.addEventListener('mouseout', (e)=>{
+		this.divContainer.addEventListener('mouseout', (e)=>{
 			this.fixedTableOut(e);
 		},false);
 	},
-	fixedTableHover(e){}
+	fixedTableHover(e){
+		var ele = e.target.parentElement;
+		if(ele.nodeName.toLowerCase() == 'tr'){
+			ele.className = 'fixed-hover';
+			var arr = Array.prototype.slice.call(ele.parentNode.childNodes,0);
+			var nodeArr = [];
+			arr.forEach(function(item, index){
+				if(item.nodeName == 'TR'){
+					nodeArr.push(item);
+				}
+			})
+			var index = nodeArr.indexOf(ele);
+			var table = this.divContainer.querySelectorAll('.flexed-table');
 
-
+			for(let i = 0; i < table.length; i++){
+				let arr1 = [];
+				for(let j = 0; j < table[i].childNodes.length; j++){
+					let nodeBody = table[i].childNodes[j];
+					if(j == index){
+						nodeBody.className = 'fixed-hover';
+					}
+				}
+			}
+		}
+	},
+	fixedTableOut(){
+		var ele = this.divContainer.querySelectorAll('.fixed-hover');
+		ele.forEach(function(item,index){
+			item.className = '';
+		})
+	}
 }
+
+
 var tableContainer = document.querySelector('.right-content');
 var fixedBody = document.querySelector('.fixed-body');
-
+tableContainer.addEventListener('mouseover', (e)=>{
+	fixedTableHover(e);
+},false);
+tableContainer.addEventListener('mouseout', (e)=>{
+	fixedTableOut(e);
+},false);
 
 function fixedTableHover(e){
 	var ele = e.target.parentElement;

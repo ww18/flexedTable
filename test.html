@@ -4,6 +4,11 @@
 	<meta charset="UTF-8">
 	<title>Document</title>
 	<link rel="stylesheet" type="text/css" href="flexedTable.css">
+	<style type="text/css">
+		.footer{
+			height: 40px;
+		}
+	</style>
 </head>
 <body>
 	<header class="header"></header>
@@ -13,6 +18,12 @@
 			<!-- 列固定的table -->
 		</div>
 	</main>
+	<div class="footer">
+		<div id="app">
+			<div>{{title}}</div>
+			<div>{{name}}</div>
+		</div>
+	</div>
 	<script type="text/javascript" src="flexedTable.js"></script>
 	<script type="text/javascript">
 		var data1 = [{
@@ -99,6 +110,26 @@
 			data: data1
 		}
 		var t = new FlexedTable(opt);
+	</script>
+
+	<script type="text/javascript" src="assets/defineReactive.js"></script>
+	<script type="text/javascript">
+		
+		var selfVue = new SelfVue({
+			el: "#app",
+			data: {
+				title: 'canfoo',
+				name: 'hello world'
+			},
+			mounted(){
+				setTimeout(()=>{
+					this.title = 'nihao'
+				},1000)
+			}
+		});
+		setTimeout(function(){
+			selfVue.name = 'canfoo';
+		},1000)
 	</script>
 </body>
 </html>

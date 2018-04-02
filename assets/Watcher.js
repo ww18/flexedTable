@@ -1,7 +1,7 @@
 /**
  * Created by ww on 2018/4/2.
  */
-import Dep from 'Dep.js';
+import Dep from './Dep.js';
 class Watcher{
     constructor(vm, key, cb){
         this.vm = vm;
@@ -11,12 +11,12 @@ class Watcher{
     }
     get(){
         Dep.default = this;
-        var value = this.vm.data[this.key];
+        var value = this.vm[this.key];
         Dep.default = null;
         return value;
     }
     run(){
-        var newVal = this.vm.data[this.key];
+        var newVal = this.vm[this.key];
         var oldVal = this.value;
         if(newVal !== oldVal){
             this.cb.call(this.vm, newVal, oldVal);
@@ -24,4 +24,4 @@ class Watcher{
     }
 }
 
-export Watcher;
+export default Watcher;

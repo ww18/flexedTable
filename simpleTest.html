@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="flexedTable.css">
+    <style type="text/css">
+        .footer{
+            height: 40px;
+        }
+    </style>
+</head>
+<body>
+<header class="header"></header>
+<main class="flexed-table-row flexed-table-item">
+    <nav class="nav"></nav>
+    <div id="createTable" class="content right-content flexed-table-item">
+        <!-- 列固定的table -->
+        <table id="fixedTable">
+            <tr>
+                <th>姓名</th>
+                <th>电话</th>
+                <th>团队</th>
+                <th>客户</th>
+                <th>活动策略</th>
+                <th>普通策略</th>
+                <th>状态</th>
+                <th>姓名</th>
+                <th>电话</th>
+                <th>团队</th>
+                <th>客户</th>
+                <th>活动策略</th>
+                <th>普通策略</th>
+                <th>状态</th>
+                <th>操作</th>
+            </tr>
+            <tr>
+                <td>{{name}}</td>
+                <td>{{tel}}</td>
+                <td>{{team}}</td>
+                <td>{{custom}}</td>
+                <td>{{aAtrategy}}</td>
+                <td>{{nAtrategy}}</td>
+                <td>{{status}}</td>
+                <td>{{name1}}</td>
+                <td>{{tel1}}</td>
+                <td>{{team1}}</td>
+                <td>{{custom1}}</td>
+                <td>{{aAtrategy1}}</td>
+                <td>{{nAtrategy1}}</td>
+                <td>{{status1}}</td>
+                <td><a onclick="changeId(1)">详情</a></td>
+            </tr>
+        </table>
+    </div>
+</main>
+<div class="footer">
+    <div id="app">
+        <div>{{title}}</div>
+        <div>{{name}}</div>
+    </div>
+</div>
+<script src="https://cdn.bootcss.com/systemjs/0.21.0/system.js"></script>
+<script type="text/javascript">
+    var data1 = [{
+        "name": "ww",
+        "tel": "12344",
+        "team": "团队甲",
+        "custom": 0,
+        "aAtrategy": 0,
+        "nAtrategy": 20,
+        "status": "可用",
+        "name1": "ww",
+        "tel1": "12344",
+        "team1": "团队甲",
+        "custom1": 0,
+        "aAtrategy1": 0,
+        "nAtrategy1": 20,
+        "status1": "可用"
+    },{
+        "name": "ww",
+        "tel": "12344",
+        "team": "团队甲",
+        "custom": 0,
+        "aAtrategy": 0,
+        "nAtrategy": 20,
+        "status": "可用",
+        "name1": "ww",
+        "tel1": "12344",
+        "team1": "团队甲",
+        "custom1": 0,
+        "aAtrategy1": 0,
+        "nAtrategy1": 20,
+        "status1": "可用"
+    },{
+        "name": "ww",
+        "tel": "12344",
+        "team": "团队甲",
+        "custom": 0,
+        "aAtrategy": 0,
+        "nAtrategy": 20,
+        "status": "可用",
+        "name1": "ww",
+        "tel1": "12344",
+        "team1": "团队甲",
+        "custom1": 0,
+        "aAtrategy1": 0,
+        "nAtrategy1": 20,
+        "status1": "可用"
+    },{
+        "name": "ww",
+        "tel": "12344",
+        "team": "团队甲",
+        "custom": 0,
+        "aAtrategy": 0,
+        "nAtrategy": 20,
+        "status": "可用",
+        "name1": "ww",
+        "tel1": "12344",
+        "team1": "团队甲",
+        "custom1": 0,
+        "aAtrategy1": 0,
+        "nAtrategy1": 20,
+        "status1": "可用"
+    }];
+    var data2 = [
+        {
+            "name": "ww22222",
+            "tel": "12344",
+            "team": "团队甲",
+            "custom": 0,
+            "aAtrategy": 0,
+            "nAtrategy": 20,
+            "status": "可用",
+            "name1": "ww333",
+            "tel1": "12344",
+            "team1": "团队甲",
+            "custom1": 0,
+            "aAtrategy1": 0,
+            "nAtrategy1": 20,
+            "status1": "可用"
+        },
+        {
+            "name": "ww1111",
+            "tel": "12344",
+            "team": "团队甲",
+            "custom": 0,
+            "aAtrategy": 0,
+            "nAtrategy": 20,
+            "status": "可用",
+            "name1": "ww444",
+            "tel1": "12344",
+            "team1": "团队甲",
+            "custom1": 0,
+            "aAtrategy1": 0,
+            "nAtrategy1": 20,
+            "status1": "可用"
+        },
+        {
+            "name": "ww5555",
+            "tel": "12344",
+            "team": "团队甲",
+            "custom": 0,
+            "aAtrategy": 0,
+            "nAtrategy": 20,
+            "status": "可用",
+            "name1": "ww666",
+            "tel1": "12344",
+            "team1": "团队甲",
+            "custom1": 0,
+            "aAtrategy1": 0,
+            "nAtrategy1": 20,
+            "status1": "可用"
+        },
+        {
+            "name": "ww7777",
+            "tel": "12344",
+            "team": "团队甲",
+            "custom": 0,
+            "aAtrategy": 0,
+            "nAtrategy": 20,
+            "status": "可用",
+            "name1": "ww8888",
+            "tel1": "12344",
+            "team1": "团队甲",
+            "custom1": 0,
+            "aAtrategy1": 0,
+            "nAtrategy1": 20,
+            "status1": "可用"
+        },{
+        "name": "ww9999",
+        "tel": "12344",
+        "team": "团队甲",
+        "custom": 0,
+        "aAtrategy": 0,
+        "nAtrategy": 20,
+        "status": "可用",
+        "name1": "ww0000",
+        "tel1": "12344",
+        "team1": "团队甲",
+        "custom1": 0,
+        "aAtrategy1": 0,
+        "nAtrategy1": 20,
+        "status1": "可用"
+    },{
+        "name": "ww",
+        "tel": "12344",
+        "team": "团队甲",
+        "custom": 0,
+        "aAtrategy": 0,
+        "nAtrategy": 20,
+        "status": "可用",
+        "name1": "ww",
+        "tel1": "12344",
+        "team1": "团队甲",
+        "custom1": 0,
+        "aAtrategy1": 0,
+        "nAtrategy1": 20,
+        "status1": "可用"
+    },{
+        "name": "ww",
+        "tel": "12344",
+        "team": "团队甲",
+        "custom": 0,
+        "aAtrategy": 0,
+        "nAtrategy": 20,
+        "status": "可用",
+        "name1": "ww",
+        "tel1": "12344",
+        "team1": "团队甲",
+        "custom1": 0,
+        "aAtrategy1": 0,
+        "nAtrategy1": 20,
+        "status1": "可用"
+    },{
+        "name": "ww",
+        "tel": "12344",
+        "team": "团队甲",
+        "custom": 0,
+        "aAtrategy": 0,
+        "nAtrategy": 20,
+        "status": "可用",
+        "name1": "ww",
+        "tel1": "12344",
+        "team1": "团队甲",
+        "custom1": 0,
+        "aAtrategy1": 0,
+        "nAtrategy1": 20,
+        "status1": "可用"
+    }];
+    function changeId(id){
+        alert(id)
+    }
+    var opt = {
+        fixedLeft: 2,
+        fixedRight: 1,
+        vm: "#createTable",
+        data: {
+            data: data1
+        }
+    };
+    SystemJS.import('dist/fixedTable.js').then(function (m) {
+
+        var t = new m.default(opt);
+        setTimeout(()=>{
+            opt.data.data = data2;
+        }, 3000)
+
+
+    });
+
+</script>
+
+
+</body>
+</html>

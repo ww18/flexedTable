@@ -1,0 +1,29 @@
+{
+  "name": "flexedtable",
+  "version": "1.0.0",
+  "description": "test",
+  "main": "flexedTable.js",
+  "scripts": {
+    "bBuild": "babel assets -d dist",
+    "start": "http-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ww18/flexedTable.git"
+  },
+  "keywords": [
+    "fixed"
+  ],
+  "author": "lww",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ww18/flexedTable/issues"
+  },
+  "homepage": "https://github.com/ww18/flexedTable#readme",
+  "devDependencies": {
+    "babel": "^6.23.0",
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "http-server": "^0.11.1"
+  }
+}

@@ -15,4 +15,4 @@ class Dep{
     }
 }
 
-export Dep;
+export default Dep;

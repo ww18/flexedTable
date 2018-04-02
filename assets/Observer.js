@@ -1,7 +1,7 @@
 /**
  * Created by ww on 2018/4/2.
  */
-import Dep from 'Dep.js';
+import Dep from './Dep.js';
 class Observer{
     constructor(data){
         this.walk(data);
@@ -12,7 +12,7 @@ class Observer{
         })
     }
     definedProperty(data, key, val){
-        observe(data);
+        observe(val);
         var dep = new Dep();
         Object.defineProperty(data, key, {
             enumerable: true,
@@ -34,9 +34,9 @@ class Observer{
     }
 }
 function observe(data){
-    if(!data || typeof data !== 'object'){
+    if(!data || Array.isArray(data)){
         return;
     }
     return new Observer(data);
 }
-export observe;
+export default observe;

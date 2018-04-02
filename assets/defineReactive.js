@@ -31,9 +31,7 @@ Observer.prototype = {
 		})
 	}
 }
-function defineReactive(data, key, val){
-	
-}
+
 //遍历所有属性
 function observe(data){
 	if(!data || typeof data !== 'object'){
